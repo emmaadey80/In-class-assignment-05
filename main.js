@@ -1,13 +1,13 @@
-import { getPosts } from './api.js';
+import { getUsers } from './api.js';
 
-function displayPosts() {
+function displayUsers() {
     const container = document.getElementById('postContainer');
 
-    getPosts()
-    .then(posts => {
-        posts.slice(0,5) .forEach(post => {
+    getUsers()
+    .then(users => {
+        users.slice(0,5) .forEach(post => {
             const div = document.createElement('div');
-            div.innerHTML = `<h3>${post.title}</h3><p>${post.body}</p>`;
+            div.innerHTML = `<h3>${post.name}</h3><p>${post.email}</p><p>${post.phone}</p>`;
             container.appendChild(div);
         });
     })
@@ -17,4 +17,4 @@ function displayPosts() {
     });
 }
 
-displayPosts();
+displayUsers();
