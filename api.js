@@ -13,4 +13,4 @@ export function getPosts() {
         console.error("Fetch failed", error.message)
         throw error;
     });
-}
+} 
